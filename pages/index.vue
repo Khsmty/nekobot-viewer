@@ -10,7 +10,7 @@
 
       <div style="margin: 1rem 0"></div>
 
-      <v-img :src="imgURL" height="100vh" contain>
+      <v-img :src="imgURL" height="90vh" contain>
         <template #placeholder>
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-progress-circular
