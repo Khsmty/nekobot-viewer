@@ -30,15 +30,15 @@
       <div style="margin: 1rem 0"></div>
 
       <v-select
-        v-model="autoSec"
-        :items="auto"
-        label="auto (sec)"
-        @change="nextImage()"
-      ></v-select>
-      <v-select
         v-model="currentType"
         :items="types"
         label="type"
+        @change="nextImage()"
+      ></v-select>
+      <v-select
+        v-model="autoSec"
+        :items="auto"
+        label="auto (sec)"
         @change="nextImage()"
       ></v-select>
     </v-col>
