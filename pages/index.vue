@@ -112,8 +112,6 @@ export default {
   },
   methods: {
     async nextImage() {
-      this.autoSec = 0;
-
       this.history.unshift(this.imgURL);
 
       if (this.nextImgURL) {
