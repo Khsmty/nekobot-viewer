@@ -4,18 +4,21 @@
       <v-btn color="secondary" @click="prevImage()">
         <v-icon>mdi-arrow-left</v-icon> Prev
       </v-btn>
+      <a :href="imgURL" target="_blank">
+        <v-btn color="primary">Download</v-btn>
+      </a>
       <v-btn color="success" @click="nextImage()">
         Next <v-icon>mdi-arrow-right</v-icon>
       </v-btn>
 
       <div style="margin: 1rem 0"></div>
 
-      <v-img :src="imgURL" height="90vh" contain>
+      <v-img :src="imgURL" height="80vh" contain>
         <template #placeholder>
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-progress-circular
               indeterminate
-              color="grey lighten-5"
+              color="#5865F2"
             ></v-progress-circular>
           </v-row>
         </template>
@@ -23,9 +26,15 @@
 
       <div style="margin: 1rem 0"></div>
 
+      <v-btn color="secondary" @click="prevImage()">
+        <v-icon>mdi-arrow-left</v-icon> Prev
+      </v-btn>
       <a :href="imgURL" target="_blank">
         <v-btn color="primary">Download</v-btn>
       </a>
+      <v-btn color="success" @click="nextImage()">
+        Next <v-icon>mdi-arrow-right</v-icon>
+      </v-btn>
 
       <div style="margin: 1rem 0"></div>
 
@@ -33,7 +42,7 @@
         v-model="currentType"
         :items="types"
         label="type"
-        @change="nextImage()"
+        @change="changeType()"
       ></v-select>
       <v-select
         v-model="autoSec"
@@ -103,6 +112,8 @@ export default {
   },
   methods: {
     async nextImage() {
+      this.autoSec = 0;
+
       this.history.unshift(this.imgURL);
 
       if (this.nextImgURL) {
@@ -116,8 +127,14 @@ export default {
       this.nextImgURL = await this.getImageURL();
     },
     prevImage() {
+      this.autoSec = 0;
+
       this.nextImgURL = this.imgURL;
       this.imgURL = this.history.shift();
+    },
+    changeType() {
+      this.nextImgURL = null;
+      this.nextImage();
     },
     async getImageURL() {
       const img = await this.$axios.get(

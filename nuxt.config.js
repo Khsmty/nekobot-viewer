@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/es5/util/colors';
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nekobot-gacha',
-    title: 'nekobot-gacha',
+    titleTemplate: 'NekoBot Image Viewer',
+    title: 'NekoBot Image Viewer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -53,7 +53,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'ja',
     },
   },
 
@@ -76,6 +76,8 @@ export default {
     },
   },
 
+  loading: { color: '#5865F2' },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
+};
