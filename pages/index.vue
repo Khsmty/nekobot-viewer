@@ -5,7 +5,7 @@
         <v-icon>mdi-arrow-left</v-icon> Prev
       </v-btn>
       <a :href="imgURL" target="_blank">
-        <v-btn color="primary">Download</v-btn>
+        <v-btn color="primary" @click="autoSec = 0">Download</v-btn>
       </a>
       <v-btn color="success" @click="nextImage()">
         Next <v-icon>mdi-arrow-right</v-icon>
@@ -29,7 +29,7 @@
       <v-btn color="secondary" @click="prevImage()">
         <v-icon>mdi-arrow-left</v-icon> Prev
       </v-btn>
-      <a :href="imgURL" target="_blank">
+      <a :href="imgURL" target="_blank" @click="autoSec = 0">
         <v-btn color="primary">Download</v-btn>
       </a>
       <v-btn color="success" @click="nextImage()">
