@@ -1,5 +1,3 @@
-import FileSaver from "file-saver";
-
 import imgURL from "@/store/imgURL";
 import settings from "@/store/settings";
 import state from "@/store/state";
