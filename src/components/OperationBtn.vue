@@ -4,8 +4,6 @@
       color="success"
       prepend-icon="mdi-arrow-left"
       stacked
-      width="35%"
-      max-width="150px"
       @click="prevImg()"
     >
       Prev
@@ -25,8 +23,8 @@
       color="success"
       prepend-icon="mdi-arrow-right"
       stacked
-      width="35%"
-      max-width="150px"
+      width="50%"
+      max-width="200px"
       @click="nextImg()"
     >
       Next
