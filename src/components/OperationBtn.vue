@@ -1,7 +1,7 @@
 <template>
   <div class="my-4">
     <v-btn
-      color="secondary"
+      color="success"
       prepend-icon="mdi-arrow-left"
       stacked
       width="35%"
