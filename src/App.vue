@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <v-row justify="center" class="mt-5 mb-2">
+      <v-row justify="center" class="mt-5 mb-2 mx-0">
         <h1>NekoBot image viewer</h1>
       </v-row>
 
