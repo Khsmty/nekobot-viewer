@@ -1,3 +1,5 @@
+import FileSaver from "file-saver";
+
 import imgURL from "@/store/imgURL";
 import settings from "@/store/settings";
 import state from "@/store/state";
@@ -5,15 +7,12 @@ import state from "@/store/state";
 export const getImgURL = async () => {
   const api = await fetch(
     `https://nekobot.xyz/api/image?type=${settings.imgType}`
-  );
-
-  if (api.status === 429) {
+  ).catch(() => {
     state.rateLimit = true;
     settings.autoSec = 0;
-  }
+  });
 
-  const res = await api.json();
-
+  const res = await api?.json();
   return res.message;
 };
 

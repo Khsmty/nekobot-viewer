@@ -27,7 +27,7 @@
 
       <v-dialog v-model="state.rateLimit" width="auto">
         <v-card>
-          <v-card-title class="text-h5 mt-2 ml-1">
+          <v-card-title class="text-h5 mt-3 ml-1">
             Rate limit exceeded
           </v-card-title>
           <v-card-text class="pt-2">
