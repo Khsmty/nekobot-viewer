@@ -1,19 +1,35 @@
 <template>
   <div class="my-4">
-    <v-btn color="secondary" @click="prevImg()">
-      <v-icon start>mdi-arrow-left</v-icon> Prev
+    <v-btn
+      color="secondary"
+      prepend-icon="mdi-arrow-left"
+      stacked
+      width="35%"
+      max-width="150px"
+      @click="prevImg()"
+    >
+      Prev
     </v-btn>
     <v-btn
       color="primary"
       class="mx-2"
+      prepend-icon="mdi-download"
+      stacked
       :href="imgURL.current"
       target="_blank"
       @click="settings.autoSec = 0"
     >
-      Download
+      DL
     </v-btn>
-    <v-btn color="success" @click="nextImg()">
-      Next <v-icon end>mdi-arrow-right</v-icon>
+    <v-btn
+      color="success"
+      prepend-icon="mdi-arrow-right"
+      stacked
+      width="35%"
+      max-width="150px"
+      @click="nextImg()"
+    >
+      Next
     </v-btn>
   </div>
 </template>
