@@ -6,13 +6,13 @@
           v-model="settings.imgType"
           :items="imgTypes"
           label="type"
-          @change="initImg()"
+          @update:modelValue="initImg()"
         />
         <v-select
           v-model="settings.autoSec"
           :items="autoSecs"
           label="auto (sec)"
-          @change="nextImg()"
+          @update:modelValue="nextImg()"
         />
       </v-expansion-panel-text>
     </v-expansion-panel>

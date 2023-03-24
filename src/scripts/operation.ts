@@ -15,8 +15,10 @@ export const getImgURL = async () => {
 };
 
 export const initImg = async () => {
-  imgURL.current = await getImgURL();
-  imgURL.next = await getImgURL();
+  imgURL.current = "";
+  imgURL.next = "";
+
+  nextImg();
 };
 
 export const prevImg = () => {
