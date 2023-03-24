@@ -6,7 +6,7 @@
           v-model="settings.imgType"
           :items="imgTypes"
           label="type"
-          @change="changeType()"
+          @change="initImg()"
         />
         <v-select
           v-model="settings.autoSec"
@@ -21,5 +21,5 @@
 
 <script setup lang="ts">
 import settings, { imgTypes, autoSecs } from "@/store/settings";
-import { nextImg, changeType } from "@/scripts/operation";
+import { nextImg, initImg } from "@/scripts/operation";
 </script>

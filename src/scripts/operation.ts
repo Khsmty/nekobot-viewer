@@ -14,6 +14,11 @@ export const getImgURL = async () => {
   return res.message;
 };
 
+export const initImg = async () => {
+  imgURL.current = await getImgURL();
+  imgURL.next = await getImgURL();
+};
+
 export const prevImg = () => {
   settings.autoSec = 0;
   imgURL.next = imgURL.current;
@@ -32,11 +37,4 @@ export const nextImg = async () => {
   }
 
   imgURL.next = await getImgURL();
-};
-
-export const changeType = () => {
-  imgURL.current = "";
-  imgURL.next = "";
-
-  nextImg();
 };
