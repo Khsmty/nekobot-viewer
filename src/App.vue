@@ -10,13 +10,19 @@
           <v-col cols="12" style="text-align: center">
             <OperationBtn />
 
-            <v-img :src="imgURL.current" height="80vh" contain>
-              <template #placeholder>
-                <v-row class="fill-height ma-0" align="center" justify="center">
-                  <v-progress-circular indeterminate color="primary" />
-                </v-row>
-              </template>
-            </v-img>
+            <div ref="swipeTarget">
+              <v-img :src="imgURL.current" height="80vh" contain>
+                <template #placeholder>
+                  <v-row
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                  >
+                    <v-progress-circular indeterminate color="primary" />
+                  </v-row>
+                </template>
+              </v-img>
+            </div>
             <v-img :src="imgURL.next" height="0" contain />
 
             <OperationBtn />
@@ -51,7 +57,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import { useSwipe } from "@vueuse/core";
 
 import imgURL from "@/store/imgURL";
 import settings from "@/store/settings";
@@ -59,6 +66,18 @@ import state from "@/store/state";
 import { initImg, nextImg, prevImg } from "@/scripts/operation";
 import OperationBtn from "@/components/OperationBtn.vue";
 import Settings from "@/components/Settings.vue";
+
+const swipeTarget = ref<HTMLElement>();
+
+useSwipe(swipeTarget, {
+  onSwipeEnd: (_e, direction) => {
+    if (direction === "LEFT") {
+      nextImg();
+    } else if (direction === "RIGHT") {
+      prevImg();
+    }
+  },
+});
 
 onMounted(async () => {
   initImg();
