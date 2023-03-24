@@ -1,6 +1,6 @@
 <template>
   <v-expansion-panels class="my-10">
-    <v-expansion-panel title="Settings">
+    <v-expansion-panel title="Settings" ripple style="max-width: 300px;">
       <v-expansion-panel-text>
         <v-select
           v-model="settings.imgType"
