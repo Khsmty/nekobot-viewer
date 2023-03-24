@@ -68,6 +68,7 @@ onMounted(async () => {
   setInterval(() => {
     if (settings.autoSec) {
       sec++;
+
       if (sec > settings.autoSec) {
         sec = 0;
         nextImg();
