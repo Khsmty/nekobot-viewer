@@ -56,7 +56,7 @@ import { onMounted } from "vue";
 import imgURL from "@/store/imgURL";
 import settings from "@/store/settings";
 import state from "@/store/state";
-import { initImg, nextImg } from "@/scripts/operation";
+import { initImg, nextImg, prevImg } from "@/scripts/operation";
 import OperationBtn from "@/components/OperationBtn.vue";
 import Settings from "@/components/Settings.vue";
 
@@ -74,5 +74,13 @@ onMounted(async () => {
       }
     }
   }, 1000);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") {
+    prevImg();
+  } else if (e.key === "ArrowRight") {
+    nextImg();
+  }
 });
 </script>
