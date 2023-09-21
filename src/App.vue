@@ -71,9 +71,9 @@ const swipeTarget = ref<HTMLElement>();
 
 useSwipe(swipeTarget, {
   onSwipeEnd: (_e, direction) => {
-    if (direction === "LEFT") {
+    if (direction === "left") {
       nextImg();
-    } else if (direction === "RIGHT") {
+    } else if (direction === "right") {
       prevImg();
     }
   },
