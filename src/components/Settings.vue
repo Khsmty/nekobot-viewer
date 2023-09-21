@@ -1,7 +1,8 @@
 <template>
-  <v-expansion-panels class="my-10">
-    <v-expansion-panel title="Settings" ripple style="max-width: 300px;">
-      <v-expansion-panel-text>
+  <v-row justify="center">
+    <v-card class="my-8" style="width: 300px">
+      <template v-slot:title>Settings</template>
+      <template v-slot:text>
         <v-select
           v-model="settings.imgType"
           :items="imgTypes"
@@ -12,11 +13,12 @@
           v-model="settings.autoSec"
           :items="autoSecs"
           label="auto (sec)"
+          hide-details
           @update:modelValue="nextImg()"
         />
-      </v-expansion-panel-text>
-    </v-expansion-panel>
-  </v-expansion-panels>
+      </template>
+    </v-card>
+  </v-row>
 </template>
 
 <script setup lang="ts">
